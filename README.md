@@ -1,8 +1,71 @@
-# Career Mentor
+<img width="701" height="578" alt="image" src="https://github.com/user-attachments/assets/ca2d0e1d-4c16-4002-95ad-7d2ced6cf8f1" /># Career Mentor
 
 An AI-flavored career mentorship platform that takes a student through onboarding, resume analysis, skill-gap detection, a personalized learning roadmap, quizzes, and mock interviews — all coordinated through a lightweight multi-agent backend.
 
-![Career Mentor architecture](./architecture/architecture.png)
+#Architecture
+                         [ Student ]
+                              │
+                              ▼
+                    ┌─────────────────────┐
+                    │   React Frontend    │
+                    │                     │
+                    │ Login • Resume • UI │
+                    └──────────┬──────────┘
+                               │
+                               ▼
+                    ┌─────────────────────┐
+                    │   FastAPI Backend   │
+                    │                     │
+                    │ JWT Auth • SQLite   │
+                    └──────────┬──────────┘
+                               │
+                               ▼
+                    ┌─────────────────────┐
+                    │  Coordinator Agent  │
+                    │                     │
+                    │ Main Decision Maker │
+                    └──────────┬──────────┘
+                               │
+          ┌────────────────────┼────────────────────┐
+          │                    │                    │
+          ▼                    ▼                    ▼
+   ┌──────────────┐     ┌──────────────┐     ┌──────────────┐
+   │ Profile Agent│     │ Skill Gap    │     │ Roadmap      │
+   │              │     │ Agent        │     │ Agent        │
+   │ Skill Profile│     │ vs Target    │     │ Learning Path│
+   └──────┬───────┘     └──────┬───────┘     └──────┬───────┘
+          │                    │                    │
+          └────────────────────┼────────────────────┘
+                               │
+          ┌────────────────────┼────────────────────┐
+          │                    │                    │
+          ▼                    ▼                    ▼
+   ┌──────────────┐     ┌──────────────┐     ┌──────────────┐
+   │ Question     │     │ Mock         │     │ LangGraph +  │
+   │ Agent        │     │ Interview    │     │ FAISS Vector │
+   │              │     │ Agent        │     │ Store        │
+   │ Tests Weak   │     │ Simulates    │     │ Shared State │
+   │ Spots        │     │ Interviews   │     │ + Retrieval  │
+   └──────┬───────┘     └──────┬───────┘     └──────┬───────┘
+          │                    │                    │
+          └────────────────────┼────────────────────┘
+                               │
+                               ▼
+                    ┌─────────────────────┐
+                    │   Feedback Agent    │
+                    │                     │
+                    │ Evaluates Results   │
+                    │ + Gives Feedback    │
+                    └──────────┬──────────┘
+                               │
+                               ▼
+                    ┌─────────────────────┐
+                    │  Student Dashboard  │
+                    │                     │
+                    │ Progress • Skills   │
+                    │ Roadmap • Feedback  │
+                    └─────────────────────┘
+
 
 ## How it works
 
