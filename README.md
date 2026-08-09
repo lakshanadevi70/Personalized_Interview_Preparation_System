@@ -2,6 +2,9 @@
 
 An AI-flavored career mentorship platform that takes a student through onboarding, resume analysis, skill-gap detection, a personalized learning roadmap, quizzes, and mock interviews — all coordinated through a lightweight multi-agent backend.
 
+**Live demo:** [personalizedinterviewagent.netlify.app](https://personalizedinterviewagent.netlify.app/login.html)
+**Portfolio:** [lakshanadeviportfolio.netlify.app](https://lakshanadeviportfolio.netlify.app/)
+
 <img width="701" height="578" alt="image" src="https://github.com/user-attachments/assets/ca2d0e1d-4c16-4002-95ad-7d2ced6cf8f1" /># Career Mentor
 
 ## How it works
