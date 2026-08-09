@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>
+if(!localStorage.getItem("cm_token")){ location.replace("login.html"); }
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Build your profile · Career Mentor</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;1,500&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<div style="min-height:100vh; display:flex; align-items:center; justify-content:center; padding:40px;">
+  <div class="card fade-in" style="width:100%; max-width:520px;">
+    <div style="height:4px; background:var(--panelBorder); border-radius:2px; margin-bottom:8px; overflow:hidden;">
+      <div id="qProgress" style="width:9%; height:100%; background:var(--ember); transition:width .15s;"></div>
+    </div>
+    <div class="mono" id="qCounter" style="font-size:11px; color:var(--mist); margin-bottom:20px;">Question 1 of 5</div>
+    <h2 class="display" id="qText" style="font-size:22px; margin-bottom:20px;"></h2>
+    <input id="qInput" class="focus-ring" style="width:100%; background:var(--ink); border:1px solid var(--panelBorder); border-radius:10px; padding:12px 14px; color:inherit;" placeholder="Type your answer...">
+    <div style="display:flex; justify-content:space-between; margin-top:24px;">
+      <button class="btn-ghost focus-ring" onclick="prevQ()">Back</button>
+      <button class="btn-ember focus-ring" id="nextBtn" onclick="nextQ()">Next</button>
+    </div>
+  </div>
+</div>
+
+<script src="assets/api.js"></script>
+<script src="assets/shell.js"></script>
+<script src="assets/auth.js"></script>
+<script>
+  applySavedTheme();
+  renderQ();
+</script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>
+// Guard: runs before anything renders. Bounces signed-out visitors to login.html.
+if(!localStorage.getItem("cm_token")){ location.replace("login.html"); }
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard · Career Mentor</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;1,500&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+
+</head>
+<body>
+<div class="app-shell">
+  <aside class="sidebar" id="sidebarSlot"></aside>
+  <div>
+    <div class="topbar" id="topbarSlot"></div>
+    <div class="main">
+      <div class="pagepane active fade-in">
+        <div class="grid grid-2" style="margin-bottom:18px;">
+          <div class="card">
+            <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:10px;">
+              <div class="mono" style="font-size:11px; color:var(--mist); text-transform:uppercase;">Your trail</div>
+              <span class="pill pill-ember" id="dashTrackPill"></span>
+            </div>
+            <div class="trail" id="dashTrail"></div>
+          </div>
+          <div class="card" style="display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center;">
+            <div class="display" id="readinessNum" style="font-size:44px; color:var(--ember);">–</div>
+            <div style="font-size:13px; color:var(--mist); margin-top:4px;">Career readiness</div>
+          </div>
+        </div>
+        <div class="grid grid-3 stagger">
+          <div class="card"><div class="mono" style="font-size:11px; color:var(--mist);">RESUME SCORE</div><div class="display" id="resumeScoreNum" style="font-size:28px; margin:8px 0;">–</div></div>
+          <div class="card"><div class="mono" style="font-size:11px; color:var(--mist);">SKILL GAP</div><div id="dashMissing" style="display:flex; gap:6px; flex-wrap:wrap; margin:10px 0;"></div><a href="skillgap.html" style="font-size:12px; color:var(--ember); cursor:pointer;">View full gap →</a></div>
+          <div class="card"><div class="mono" style="font-size:11px; color:var(--mist);">ROADMAP PROGRESS</div><div id="dashRoadmap" style="font-size:13px; color:var(--mist); margin-top:10px;"></div></div>
+          <div class="card"><div class="mono" style="font-size:11px; color:var(--mist);">UPCOMING TASKS</div><ul id="dashTasks" style="font-size:13px; margin-top:8px; padding-left:16px; color:var(--mist);"></ul></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="assets/api.js"></script>
+<script src="assets/shell.js"></script>
+<script src="assets/app.js"></script>
+<script>
+(async function(){
+  await safeRun('dashboard', loadDashboard);
+})();
+</script>
+</body>
+</html>
