@@ -1,4 +1,12 @@
-#Personalized_Interview_Preparation_System
+# Personalized Interview Preparation System
+
+## Current application
+
+```text
+CareerAI-Mentor/
+├── backend/   # FastAPI API
+└── frontend/  # React + Vite client
+```
 
 An AI-flavored career mentorship platform that takes a student through onboarding, resume analysis, skill-gap detection, a personalized learning roadmap, quizzes, and mock interviews — all coordinated through a lightweight multi-agent backend.
 

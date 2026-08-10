@@ -5,7 +5,7 @@ __pycache__/
 *.py[cod]
 .pytest_cache/
 .venv/
-backend/careerai.db
+CareerAI-Mentor/backend/careerai.db
 /careerai.db
 node_modules/
 frontend/dist/
