@@ -1,0 +1,1 @@
+"""CareerAI Mentor backend application."""
