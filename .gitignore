@@ -6,6 +6,7 @@ __pycache__/
 .pytest_cache/
 .venv/
 backend/careerai.db
+/careerai.db
 node_modules/
 frontend/dist/
 coverage/
